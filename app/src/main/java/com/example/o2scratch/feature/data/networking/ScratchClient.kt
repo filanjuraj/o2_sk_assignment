@@ -37,8 +37,6 @@ class ScratchClient {
 
     suspend fun getVersion(code: String): Result<Int> {
         return try {
-            return Result.success(1230000)
-
             val response = client.get(URL) {
                 parameter("code", code)
             }.body<VersionResponse>()

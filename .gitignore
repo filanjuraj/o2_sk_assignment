@@ -6,7 +6,7 @@ build/
 local.properties
 
 # macOS files
-.DS_Store
+*.DS_Store
 
 # Log/OS Files
 *.log
