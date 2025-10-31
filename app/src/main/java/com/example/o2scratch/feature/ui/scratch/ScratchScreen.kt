@@ -14,6 +14,7 @@ import androidx.compose.ui.unit.dp
 import com.example.o2scratch.feature.presentation.common.ScratchCardState
 import com.example.o2scratch.feature.presentation.scratch.ScratchScreenViewModel
 import com.example.o2scratch.feature.ui.common.card.ScratchCard
+import com.example.o2scratch.ui.util.ScratchPreview
 
 @Composable
 fun ScratchScreen(
@@ -43,4 +44,18 @@ fun ScratchScreen(
         }
     }
 }
+
+@ScratchPreview
+@Composable
+private fun ScratchScreenPreview() = ScratchScreen(
+    state = ScratchCardState.Scratched(code = "ABC123"),
+    onAction = {}
+)
+
+@ScratchPreview
+@Composable
+private fun ScratchScreenLoadingPreview() = ScratchScreen(
+    state = ScratchCardState.Loading,
+    onAction = {}
+)
 

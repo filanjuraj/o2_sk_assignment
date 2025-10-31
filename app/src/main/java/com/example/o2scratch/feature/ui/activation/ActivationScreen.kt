@@ -22,6 +22,7 @@ import com.example.o2scratch.feature.presentation.activation.ActivationScreenSta
 import com.example.o2scratch.feature.presentation.activation.ActivationScreenViewModel
 import com.example.o2scratch.feature.presentation.common.ScratchCardState
 import com.example.o2scratch.feature.ui.common.card.ScratchCard
+import com.example.o2scratch.ui.util.ScratchPreview
 
 @Composable
 fun ActivationScreen(
@@ -87,6 +88,42 @@ private fun ErrorDialog(
                 Text("OK")
             }
         }
+    )
+}
+
+@ScratchPreview
+@Composable
+private fun ActivationScreenPreview() {
+    ActivationScreen(
+        state = ActivationScreenState(
+            scratchCardState = ScratchCardState.Scratched(code = "ABC123"),
+            showErrorDialog = false,
+        ),
+        onAction = {}
+    )
+}
+
+@ScratchPreview
+@Composable
+private fun ActivationScreenLoadingPreview() {
+    ActivationScreen(
+        state = ActivationScreenState(
+            scratchCardState = ScratchCardState.Loading,
+            showErrorDialog = false,
+        ),
+        onAction = {}
+    )
+}
+
+@ScratchPreview
+@Composable
+private fun ActivationScreenErrorDialogPreview() {
+    ActivationScreen(
+        state = ActivationScreenState(
+            scratchCardState = ScratchCardState.Scratched(code = "ABC123"),
+            showErrorDialog = true,
+        ),
+        onAction = {}
     )
 }
 
